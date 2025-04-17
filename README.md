@@ -2,6 +2,9 @@
 
 Essa ferramenta automatiza 4 comandos essencias para um projeto em apenas 2 argumentos
 
+> [!NOTE]
+> Antes de tudo, se você não sabe o que é um commit, clique [aqui](./COMMIT.md)
+
 ### Instalação
 ```bash
 git clone https://github.com/Artemis-TK/gpush-tool.git ~/
