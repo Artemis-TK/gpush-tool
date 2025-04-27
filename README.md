@@ -6,15 +6,15 @@ Essa ferramenta automatiza 4 comandos essenciais para um projeto em apenas 2 arg
 > Antes de tudo, se você não sabe o que é um commit, clique [aqui](./COMMIT.md)
 
 ### Instalação
-```bash
-git clone https://github.com/Artemis-TK/gpush-tool.git ~/
+```nginx
+git clone https://github.com/Artemiz-TK/gpush-tool.git ~/
 cd ~/gpush-tool
 chmod +x installation
 ./installation
 ```
 
 O que você vai ver:
-```nginx
+```yaml
 Instalando os recursos...
 Tudo pronto.
 ```
@@ -25,12 +25,12 @@ após isso, vá para algum repositório git e faça o teste
 
 Se você não sabe como usar, basta digitar no git esse comando
 
-```bash
+```nginx
 gpush
 ```
 
 A saída vai ser algo como
-```nginx
+```yaml
 O commit nao pode estar vazio. Digite algum valor para o commit.
 Exemplo:
 
@@ -39,7 +39,7 @@ gpush "primeiro commit"
 
 ou apenas digite logo o commit ue você quer adicionar no repositório
 
-```bash
+```nginx
 gpush "Atualizando a cena"
 ```
 
