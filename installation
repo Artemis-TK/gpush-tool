@@ -2,7 +2,7 @@
 
 set -e
 
-printf "Instalando os recursos"
+printf "Preparando o ambiente"
 sleep 1s
 printf "."
 sleep 1s
