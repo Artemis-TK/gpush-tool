@@ -22,9 +22,14 @@ int main(int argc, char const *argv[])
     }
 
     char comando[600];
-    snprintf(comando, sizeof(comando), "git commit -m \"%s\"", mensagem);
+    snprintf(comando, sizeof(comando), "git commit -m %s", mensagem);
 
-    system("git pull origin main");
+    int git_pull_return = system("git pull origin main");
+
+    if (git_pull_return != SUCCESS_EXIT)
+    {
+        printf("⚠️Possivelmente houve conflitos, resolva-os!⚠️\n");
+    }
     system("git add .");
     system(comando);
     system("git push origin main");
