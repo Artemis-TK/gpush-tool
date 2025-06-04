@@ -29,6 +29,7 @@ int main(int argc, char const *argv[])
     if (git_pull_return != SUCCESS_EXIT)
     {
         printf("⚠️Possivelmente houve conflitos, resolva-os!⚠️\n");
+        return EXIT_FAILURE;
     }
     system("git add .");
     system(comando);
