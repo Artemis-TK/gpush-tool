@@ -15,7 +15,7 @@ chmod +x installation
 
 O que você vai ver:
 ```yaml
-Instalando os recursos...
+Preparando o ambiente...
 Tudo pronto.
 ```
 
