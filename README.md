@@ -8,8 +8,8 @@ Essa ferramenta automatiza 4 comandos essenciais para um projeto em apenas 2 arg
 ### Instalação
 ```nginx
 git clone https://github.com/Artemiz-TK/gpush-tool.git ~/gpush-tool
-chmod +x ~/gpush-tool/installation
-~/gpush-tool/installation
+chmod +x ~/gpush-tool/install
+~/gpush-tool/install
 ```
 
 O que você vai ver:
