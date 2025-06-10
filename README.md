@@ -30,10 +30,8 @@ gpush
 
 A saída vai ser algo como
 ```yaml
-O commit nao pode estar vazio. Digite algum valor para o commit.
-Exemplo:
-
-gpush "primeiro commit"
+Uso:
+  gpush [--safe|--no-safe] "mensagem" [remoto branch]
 ```
 
 ou apenas digite logo o commit ue você quer adicionar no repositório
