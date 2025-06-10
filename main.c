@@ -24,6 +24,7 @@ int main(int argc, const char *argv[])
         if (strcmp(argv[1], "--help") == 0)
         {
             printf("Uso:\n  gpush [--safe|--no-safe] \"mensagem\" [remoto branch]\n");
+            return SUCCESS_EXIT;
         }
         else if (strcmp(argv[1], "--safe") == 0)
         {
@@ -76,7 +77,7 @@ int safe_mode(const char *mensagem, const char *remoto, const char *branch)
 
     system("git add .");
 
-    snprintf(comando, sizeof(comando), "git commit -m \"%s\"", mensagem);
+    snprintf(comando, sizeof(comando), "git commit -m %s", mensagem);
     system(comando);
 
     char push[256];
@@ -92,7 +93,7 @@ int normal_mode(const char *mensagem, const char *remoto, const char *branch)
 
     system("git add .");
 
-    snprintf(comando, sizeof(comando), "git commit -m \"%s\"", mensagem);
+    snprintf(comando, sizeof(comando), "git commit -m %s", mensagem);
     system(comando);
 
     char push[256];
