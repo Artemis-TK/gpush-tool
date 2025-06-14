@@ -7,12 +7,13 @@
 
 int safe_mode(const char *mensagem, const char *remoto, const char *branch);
 int normal_mode(const char *mensagem, const char *remoto, const char *branch);
+void help_message();
 
 int main(int argc, const char *argv[])
 {
     if (argc < 2)
     {
-        printf("Uso:\n  gpush [--safe|--no-safe] \"mensagem\" [remoto branch]\n");
+        printf("Uso:\n  gpush [-h|--help]\n");
         return FAIL_EXIT;
     }
 
@@ -23,7 +24,7 @@ int main(int argc, const char *argv[])
     {
         if (strcmp(argv[1], "--help") == 0)
         {
-            printf("Uso:\n  gpush [--safe|--no-safe] \"mensagem\" [remoto branch]\n");
+            help_message();
             return SUCCESS_EXIT;
         }
         else if (strcmp(argv[1], "--safe") == 0)
@@ -41,6 +42,14 @@ int main(int argc, const char *argv[])
         }
 
         mensagem_index = 2;
+    }
+    else if (strncmp(argv[1], "-", 1) == 0)
+    {
+        if (strcmp(argv[1], "-h") == 0)
+        {
+            help_message();
+            return SUCCESS_EXIT;
+        }
     }
 
     if (argc <= mensagem_index)
@@ -101,4 +110,12 @@ int normal_mode(const char *mensagem, const char *remoto, const char *branch)
     system(push);
 
     return SUCCESS_EXIT;
+}
+
+void help_message()
+{
+    printf("Uso:\n  gpush [opcoes] \"mensagem\" [remoto] [branch]\n");
+    printf("\n  Opcoes:");
+    printf("\n    --no-safe: nao atualiza o repositorio local (padrao)");
+    printf("\n    --safe: atualiza o repositorio local");
 }
