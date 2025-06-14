@@ -12,6 +12,8 @@ printf ".\n"
 
 cd || exit
 
-export PATH="$PATH:~/gpush-tool/bin"
+if [[ ":$PATH:" != *":$HOME/gpush-tool/bin:"* ]]; then
+    export PATH="$PATH:~/gpush-tool/bin"
+fi
 
 printf "Tudo pronto.\n"
