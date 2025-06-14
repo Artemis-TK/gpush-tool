@@ -34,6 +34,11 @@ Uso:
   gpush [-h|--help]
 ```
 
+Então digite
+```nginx
+gpush -h # ou gpush --help
+```
+
 ou apenas digite logo o commit ue você quer adicionar no repositório
 
 ```nginx
