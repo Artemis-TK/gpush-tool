@@ -31,7 +31,7 @@ gpush
 A saída vai ser algo como
 ```yaml
 Uso:
-  gpush [--safe|--no-safe] "mensagem" [remoto branch]
+  gpush [-h|--help]
 ```
 
 ou apenas digite logo o commit ue você quer adicionar no repositório
