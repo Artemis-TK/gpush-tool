@@ -71,8 +71,8 @@ int main(int argc, const char *argv[])
 
     if (mensagem == NULL && !modo_edit)
     {
-        fprintf(stderr, "Erro: Mensagem do commit ausente\n");
-        help_message();
+        fprintf(stderr, "Erro: Tente usar o comando\n");
+        printf("  gpush [-h,--help]\n");
         return FAIL_EXIT;
     }
 
@@ -150,7 +150,7 @@ int edit_commit(const char *mensagem, const char *remoto, const char *branch)
 void help_message()
 {
     printf("Uso: gpush [opcoes] \"mensagem\" [argumentos]\n\n");
-    printf("    Opções:\n");
+    printf("    Opcoes:\n");
     printf("        --safe      Atualiza o repositório local antes de enviar (recomendado)\n");
     printf("        --no-safe   Envia alterações sem atualizar local\n");
     printf("        --edit      Edita o último commit e força envio\n");
