@@ -8,6 +8,7 @@
 int safe_mode(const char *mensagem, const char *remoto, const char *branch);
 int normal_mode(const char *mensagem, const char *remoto, const char *branch);
 void help_message();
+int edit_commit(const char *mensagem, const char *remoto, const char *branch);
 
 int main(int argc, const char *argv[])
 {
@@ -19,6 +20,9 @@ int main(int argc, const char *argv[])
 
     int modo_seguro = 0;
     int mensagem_index = 1;
+    const char *mensagem = argv[mensagem_index];
+    const char *remoto = (argc > mensagem_index + 1) ? argv[mensagem_index + 1] : "origin";
+    const char *branch = (argc > mensagem_index + 2) ? argv[mensagem_index + 2] : "main";
 
     if (strncmp(argv[1], "--", 2) == 0)
     {
@@ -34,6 +38,11 @@ int main(int argc, const char *argv[])
         else if (strcmp(argv[1], "--no-safe") == 0)
         {
             modo_seguro = 0;
+        }else if (strcmp(argv[1], "--edit") == 0)
+        {
+            mensagem_index = 3;
+            int result_edit_commit = edit_commit(mensagem, remoto, branch);
+            // return result_edit_commit;
         }
         else
         {
@@ -58,9 +67,6 @@ int main(int argc, const char *argv[])
         return FAIL_EXIT;
     }
 
-    const char *mensagem = argv[mensagem_index];
-    const char *remoto = (argc > mensagem_index + 1) ? argv[mensagem_index + 1] : "origin";
-    const char *branch = (argc > mensagem_index + 2) ? argv[mensagem_index + 2] : "main";
 
     printf("Modo: %s\n", modo_seguro ? "seguro" : "normal");
     printf("Mensagem: %s\n", mensagem);
@@ -114,8 +120,26 @@ int normal_mode(const char *mensagem, const char *remoto, const char *branch)
 
 void help_message()
 {
-    printf("Uso:\n  gpush [opcoes] \"mensagem\" [remoto] [branch]\n");
+    printf("Uso:\n  gpush [opcoes(flags)] \"mensagem\" [comandos]\n");
     printf("\n  Opcoes:");
     printf("\n    --no-safe: nao atualiza o repositorio local (padrao)");
     printf("\n    --safe: atualiza o repositorio local");
+    printf("\n    --edit: edita o ultimo commit e manda para o remoto");
+}
+
+int edit_commit(const char *mensagem, const char *remoto, const char *branch)
+{
+    char comando[300];
+
+    snprintf(comando, sizeof(comando), "git commit -m \"%s\" --amend", mensagem);
+    
+    system(comando);
+
+    char push_comando[50];
+
+    snprintf(push_comando, sizeof(push_comando), "git push --force %s %s", remoto, branch);
+
+    system(push_comando);
+
+    return SUCCESS_EXIT;
 }
