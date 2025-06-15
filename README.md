@@ -48,8 +48,8 @@ gpush
 
 A saída vai ser algo como
 ```yaml
-Uso:
-  gpush [-h|--help]
+Erro: Tente usar o comando
+  gpush [-h,--help]
 ```
 
 Então digite
