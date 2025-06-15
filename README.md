@@ -18,7 +18,25 @@ Preparando o ambiente...
 Tudo pronto.
 ```
 
-após isso, vá para algum repositório git e faça o teste
+Após isso, vá para algum repositório git e faça o teste, mas primero, eu sugiro que adicione o diretório bin a variável PATH. Pra isso, segue abaixo o que cê tem que fazer
+
+Vá para a sua home e abra o arquivo `.bashrc`, por exemplo
+```bash
+code ~/.bashrc # utilize o editor de sua escolha
+```
+
+Muito provavelmente esse arquivo vai tá vazio se você ainda nem criou. Copie tudo que estiver abaixo e cole no `.bashrc`
+```bash
+#!/bin/bash
+
+export PATH="$PATH:$HOME/gpush-tool/bin"
+```
+
+Depois disso, atualize tudo
+
+```bash
+source ~/.bash_profile
+```
 
 ### Como usar
 
