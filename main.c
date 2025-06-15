@@ -32,38 +32,34 @@ int main(int argc, const char *argv[])
     const char *remoto = "origin";
     const char *branch = "main";
 
-    for (int i = 1; i < argc; i++)
-    {
-        if (strcmp(argv[i], "--safe") == 0)
-        {
+    int mensagem_index = -1;
+    for (int i = 1; i < argc; i++) {
+        if (strcmp(argv[i], "--safe") == 0) {
             modo_seguro = true;
-        }
-        else if (strcmp(argv[i], "--no-safe") == 0)
-        {
+        } 
+        else if (strcmp(argv[i], "--no-safe") == 0) {
             modo_seguro = false;
         }
-        else if (strcmp(argv[i], "--edit") == 0)
-        {
+        else if (strcmp(argv[i], "--edit") == 0) {
             modo_edit = true;
         }
-        else if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0)
-        {
+        else if (strcmp(argv[i], "-h") == 0 || strcmp(argv[i], "--help") == 0) {
             show_help = true;
         }
-        else
-        {
-            if (mensagem == NULL)
-            {
-                mensagem = argv[i];
-            }
-            else if (remoto == NULL)
-            {
-                remoto = argv[i];
-            }
-            else if (branch == NULL)
-            {
-                branch = argv[i];
-            }
+        else if (mensagem_index == -1 && argv[i][0] != '-') {
+            mensagem_index = i;
+        }
+    }
+
+    if (mensagem_index != -1) {
+        mensagem = argv[mensagem_index];
+        
+        if (argc > mensagem_index + 1) {
+            remoto = argv[mensagem_index + 1];
+        }
+        
+        if (argc > mensagem_index + 2) {
+            branch = argv[mensagem_index + 2];
         }
     }
 
