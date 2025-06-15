@@ -151,12 +151,12 @@ void help_message()
 {
     printf("Uso: gpush [opcoes] \"mensagem\" [argumentos]\n\n");
     printf("    Opcoes:\n");
-    printf("        --safe      Atualiza o repositorio local antes de enviar (recomendado)\n");
-    printf("        --no-safe   Envia alteracoes sem atualizar local\n");
-    printf("        --edit      Edita o ultimo commit e força envio\n");
-    printf("        -h, --help  Mostra esta ajuda\n\n");
+    printf("        --safe       Atualiza o repositorio local antes de enviar (recomendado)\n");
+    printf("        --no-safe    Envia alteracoes sem atualizar local\n");
+    printf("        --edit       Edita o ultimo commit e forca envio\n");
+    printf("        -h, --help   Mostra essa mensagem de ajuda\n\n");
     printf("    Argumentos:\n");
     printf("         Mensagem    Mensagem do commit\n");
-    printf("         Remoto      Nome do repositório remoto (padrão: origin)\n");
-    printf("         Branch      Nome da branch (padrão: main)\n");
+    printf("         Remoto      Nome do repositorio remoto (padrao: origin)\n");
+    printf("         Branch      Nome da branch (padrao: main)\n");
 }
