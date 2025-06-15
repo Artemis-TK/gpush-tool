@@ -158,5 +158,9 @@ void help_message()
     printf("    Argumentos:\n");
     printf("         Mensagem    Mensagem do commit\n");
     printf("         Remoto      Nome do repositorio remoto (padrao: origin)\n");
-    printf("         Branch      Nome da branch (padrao: main)\n");
+    printf("         Branch      Nome da branch (padrao: main)\n\n");
+    printf("    Exemplos:\n");
+    printf("         gpush \"Minha mensagem\"\n");
+    printf("         gpush --safe \"Mensagem segura\" upstream development\n");
+    printf("         gpush --edit \"Mensagem corrigida\"\n");
 }
