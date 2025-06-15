@@ -13,8 +13,8 @@ printf ".\n"
 cd || exit
 
 if [[ ":$PATH:" != *":$HOME/gpush-tool/bin:"* ]]; then
-  export PATH="$PATH:$HOME/gpush-tool/bin"
-  echo "Diretório adicionado ao PATH: ~/gpush-tool/bin"
+    export PATH="$PATH:$HOME/gpush-tool/bin"
+    echo "Diretório adicionado ao PATH: ~/gpush-tool/bin"
 fi
 
 printf "Tudo pronto.\n"
